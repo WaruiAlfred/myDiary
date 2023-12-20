@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>View Entry</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
-  </head>
-  <body>
-    <h1>{{ entry.title }}</h1>
-    <p>{{ entry.content }}</p>
-    <a href="{% url 'edit_entry' entry.id %}">Edit Entry</a>
-    <a href="{% url 'all_entries' %}">Back to All Entries</a>
-  </body>
-</html>
+{%extends 'base.html'%} {%block title%}View Entry{%endblock%} {%block content%}
+<h1>{{ entry.title }}</h1>
+<p>{{ entry.content }}</p>
+<a href="{% url 'edit_entry' entry.id %}">Edit Entry</a>
+<a href="{% url 'all_entries' %}">Back to All Entries</a>
+{%endblock%}

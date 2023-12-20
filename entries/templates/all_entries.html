@@ -1,17 +1,11 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>All Entries</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
-  </head>
-  <body>
-    <h1>All Entries</h1>
-    <ul>
-      {% for entry in entries %}
-      <li><a href="{% url 'view_entry' entry.id %}">{{ entry.title }}</a></li>
-      {% endfor %}
-    </ul>
-    <a href="{% url 'add_entry' %}">Add Entry</a>
-  </body>
-</html>
+{% extends "base.html" %} {% block title %}All Entries{% endblock %}
+<!-- The  extends "base.html"  line tells Django to use the base.html template as the base for this template. -->
+{% block content %}
+<h1>All Entries</h1>
+<ul>
+  {% for entry in entries %}
+  <li><a href="{% url 'view_entry' entry.id %}">{{ entry.title }}</a></li>
+  {% endfor %}
+</ul>
+<a href="{% url 'add_entry' %}">Add Entry</a>
+{% endblock %}
