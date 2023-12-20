@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      {% if form.instance.id %}Edit Entry{% else %}Add Entry{% endif %}
+    </title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+  </head>
+  <body>
+    <h1>{% if form.instance.id %}Edit Entry{% else %}Add Entry{% endif %}</h1>
+    <form method="post">
+      {% csrf_token %} {{ form.as_p }}
+      <input type="submit" value="Save" />
+    </form>
+    <a href="{% url 'all_entries' %}">Cancel</a>
+  </body>
+</html>
