@@ -1,9 +1,16 @@
 {%extends 'base.html'%} {%block title%}User Registration{%endblock%}
 <!--Registration page-->
 {%block content%}
-<h1>User Registration</h1>
-<form method="post">
-  {% csrf_token %} {{ form.as_p }}
-  <input type="submit" value="Register" />
-</form>
+<div class="w-3/4 mx-auto mt-40 shadow-lg p-10">
+  <h1 class="text-center text-blue-500 font-bold text-2xl mb-20">
+    User Registration
+  </h1>
+  <form
+    method="post"
+    class="text-center flex flex-col items-center justify-center"
+  >
+    {% csrf_token %} {{ form.as_p }}
+    <input type="submit" value="Register" class="rounded-md mt-10 w-min" />
+  </form>
+</div>
 {%endblock%}
