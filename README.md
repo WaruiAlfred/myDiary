@@ -1,6 +1,6 @@
 # MY DIARY
 
-This is a diary app where users can write down their thoughts and feelings.
+This is a diary app where users can note down their thoughts and feelings.
 
 # Installation
 
