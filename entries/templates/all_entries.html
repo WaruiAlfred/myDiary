@@ -1,11 +1,30 @@
 {% extends "base.html" %} {% block title %}All Entries{% endblock %}
 <!-- The  extends "base.html"  line tells Django to use the base.html template as the base for this template. -->
 {% block content %}
-<h1>All Entries</h1>
-<ul>
-  {% for entry in entries %}
-  <li><a href="{% url 'view_entry' entry.id %}">{{ entry.title }}</a></li>
-  {% endfor %}
-</ul>
-<a href="{% url 'add_entry' %}">Add Entry</a>
+<div class="grid grid-cols-2 gap-2">
+  <div
+    class="w-full h-screen"
+    style="
+      background-image: url('https://previews.123rf.com/images/rawpixel/rawpixel1611/rawpixel161114127/111521408-person-writing-a-diary.jpg');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    "
+  ></div>
+  <div class="w-full h-full flex flex-col p-10">
+    <h1 class="text-2xl italic text-center text-slate-700 mb-10">
+      All Entries
+    </h1>
+    <ul>
+      {% for entry in entries %}
+      <li><a href="{% url 'view_entry' entry.id %}">{{ entry.title }}</a></li>
+      {% endfor %}
+    </ul>
+    <a
+      href="{% url 'add_entry' %}"
+      class="shadow-sm bg-blue-600 w-1/5 rounded-md px-4 py-2 text-white mt-10 text-center hover:bg-blue-700 cursor-pointer"
+      >Add Entry</a
+    >
+  </div>
+</div>
 {% endblock %}

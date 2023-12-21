@@ -1,9 +1,22 @@
 {%extends 'base.html'%} {%block title%} {% if form.instance.id %}Edit Entry{%
 else %}Add Entry{% endif %} {%endblock%} {%block content%}
-<h1>{% if form.instance.id %}Edit Entry{% else %}Add Entry{% endif %}</h1>
-<form method="post">
-  {% csrf_token %} {{ form.as_p }}
-  <input type="submit" value="Save" />
-</form>
-<a href="{% url 'all_entries' %}">Cancel</a>
+<div class="w-3/4 mx-auto mt-40 shadow-lg p-10">
+  <h1 class="text-center text-blue-500 font-bold text-2xl mb-20">
+    {% if form.instance.id %}Edit Entry{% else %}Add Entry{% endif %}
+  </h1>
+  <form
+    method="post"
+    class="text-center flex flex-col items-center justify-center"
+  >
+    {% csrf_token %} {{ form.as_p }}
+    <div class="flex justify-evenly mt-10 w-full">
+      <input type="submit" value="Save" class="rounded-md mt-10 w-1/5" />
+      <a
+        href="{% url 'all_entries' %}"
+        class="shadow-sm bg-blue-600 w-1/5 rounded-md px-4 py-2 text-white mt-10 text-center hover:bg-blue-700 cursor-pointer"
+        >Cancel</a
+      >
+    </div>
+  </form>
+</div>
 {%endblock%}
