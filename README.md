@@ -37,17 +37,18 @@ $ code .
   ```
 
 - Install dependencies
+
   - Django
 
-```
-$ pip install -r requirements.txt
-```
+  ```
+  $ pip install -r requirements.txt
+  ```
 
-- Node
+  - Node
 
-```
-$ npm install
-```
+  ```
+  $ npm install
+  ```
 
 - Run the application
 
